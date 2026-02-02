@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no, date=no, email=no, address=no">
     <title>Ruben Simon - Field CTO Introduction (Proposal 1)</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,6 +25,16 @@
             --bg-light: #f8f9fa;
             --bg-white: #ffffff;
             --border-color: #e0e0e0;
+        }
+
+        /* Prevent iOS from auto-linking date-like text */
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
         }
 
         body {
@@ -1758,7 +1769,7 @@
                 <ul class="nav-links">
                     <li><a href="#introduction">Introduction</a></li>
                     <li><a href="#playbook">Playbook</a></li>
-                    <li><a href="#timeline">30/90/180 Plan</a></li>
+                    <li><a href="#timeline">30&#47;90&#47;180 Plan</a></li>
                 </ul>
             </nav>
         </div>
@@ -2102,7 +2113,7 @@
 
             <!-- 30/90/180 Day Timeline Summary -->
             <div id="timeline" class="content-block">
-                <h3 class="block-title">30/90/180 Day Plan</h3>
+                <h3 class="block-title"><span style="text-decoration: none !important; color: inherit !important;">30&#8203;/&#8203;90&#8203;/&#8203;180</span> Day Plan</h3>
                 <div class="timeline-container">
                     <div class="timeline-phase" style="border-top: 4px solid var(--snowflake-blue);">
                         <div class="phase-label" style="color: var(--snowflake-blue);">DAYS 1-30</div>
