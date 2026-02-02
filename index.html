@@ -37,10 +37,17 @@
         .header {
             background: var(--bg-white);
             border-bottom: 2px solid var(--snowflake-blue);
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             z-index: 1000;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        /* Add padding to body to account for fixed header */
+        body {
+            padding-top: 70px;
         }
 
         .header-content {
@@ -207,28 +214,118 @@
             opacity: 0.95;
         }
 
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .stats-grid {
-                grid-template-columns: repeat(3, 1fr);
+        /* ============================================ */
+        /* RESPONSIVE DESIGN                            */
+        /* Desktop: >1024px (16" MacBook optimized)     */
+        /* Tablet: 481px - 1024px                       */
+        /* Mobile: <=480px (iPhone 12 = 430px)          */
+        /* ============================================ */
+
+        /* TABLET: 481px - 1024px */
+        @media screen and (max-width: 1024px) {
+            /* Header */
+            .header-content {
+                padding: 1rem 1.5rem;
                 gap: 2rem;
             }
 
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .nav-links a {
+                font-size: 0.8rem;
+            }
+
+            /* Hero */
+            .hero {
+                padding: 3rem 0 4rem;
+                min-height: auto;
+            }
+
+            .hero-content {
+                padding: 0 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 3rem;
+            }
+
+            /* Stats */
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2.25rem;
+            }
+
+            .stat-label {
+                font-size: 0.8rem;
+            }
+
+            /* Achievement Highlights */
             .achievement-highlights {
                 grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .highlight-item {
+                padding: 1.25rem;
+            }
+
+            /* Tech Section */
+            .tech-section,
+            .domain-section,
+            .leadership-section,
+            .strategy-section {
+                padding: 3rem 0;
+            }
+
+            .tech-content,
+            .domain-content,
+            .leadership-content,
+            .strategy-content {
+                padding: 0 1.5rem;
+            }
+
+            .tech-title,
+            .domain-title,
+            .leadership-title,
+            .strategy-title {
+                font-size: 2rem;
+                margin-bottom: 2rem;
             }
 
             .tech-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
 
+            .tech-card {
+                padding: 1.5rem;
+            }
+
+            /* Domain Grid */
             .domain-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 1.25rem;
             }
 
+            .domain-card {
+                padding: 1.25rem;
+            }
+
+            /* Leadership */
             .leadership-columns {
                 grid-template-columns: 1fr;
-                gap: 2.5rem;
+                gap: 2rem;
             }
 
             .leadership-column {
@@ -239,18 +336,77 @@
                 display: none;
             }
 
+            /* Flywheel - Scale down */
+            .flywheel {
+                width: 500px;
+                height: 500px;
+            }
+
+            .circle-connector {
+                width: 280px;
+                height: 280px;
+                border-width: 8px;
+            }
+
+            .flywheel-step-box {
+                width: 160px;
+                height: 160px;
+                padding: 1rem;
+            }
+
+            .flywheel-step-title {
+                font-size: 1.1rem;
+            }
+
+            .flywheel-step-desc {
+                font-size: 0.85rem;
+            }
+
+            .flywheel-center-circle {
+                width: 100px;
+                height: 100px;
+            }
+
+            .flywheel-center-label {
+                font-size: 0.65rem;
+            }
+
+            .flywheel-center-value {
+                font-size: 0.85rem;
+            }
+
+            /* Timeline */
             .timeline-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .timeline-phase {
+                padding: 1.5rem;
+            }
+
+            /* Tables */
+            .rhythm-table th,
+            .rhythm-table td {
+                padding: 0.75rem;
+                font-size: 0.9rem;
+            }
+
+            /* Phase Details */
+            .phase-detail-section {
+                margin: 3rem 0;
+            }
+
+            .phase-mapping-container {
                 grid-template-columns: 1fr;
             }
 
+            /* Activity Grid */
             .activity-grid {
                 grid-template-columns: 1fr;
             }
 
-            .flywheel {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
+            /* Architecture */
             .arch-flow {
                 flex-direction: column;
             }
@@ -258,23 +414,11 @@
             .arch-arrow {
                 transform: rotate(90deg);
             }
-        }
 
-        @media (max-width: 768px) {
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .stat-number {
-                font-size: 2.5rem;
-            }
-
-            .domain-grid {
-                grid-template-columns: 1fr;
+            /* Section Intro */
+            .section-intro {
+                font-size: 1.1rem;
+                padding: 1.25rem;
             }
 
             .strategy-header {
@@ -285,9 +429,526 @@
             .section-number {
                 font-size: 2.5rem;
             }
+        }
+
+        /* MOBILE: <=480px (iPhone 12 Pro = 390px, iPhone 12 = 430px) */
+        @media screen and (max-width: 480px) {
+            /* Header */
+            .header {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+            }
+
+            body {
+                padding-top: 90px !important;
+            }
+
+            .header-content {
+                padding: 0.5rem 1rem !important;
+                flex-direction: column !important;
+                gap: 0.25rem !important;
+                align-items: flex-start !important;
+            }
+
+            .logo-section {
+                gap: 0.5rem !important;
+                width: 100%;
+            }
+
+            .snowflake-logo img {
+                height: 24px !important;
+            }
+
+            .role-title {
+                font-size: 0.65rem !important;
+                display: none;
+            }
+
+            nav {
+                margin-left: 0 !important;
+                width: 100%;
+            }
+
+            .nav-links {
+                gap: 0.75rem !important;
+                flex-wrap: wrap !important;
+                width: 100%;
+            }
+
+            .nav-links a {
+                font-size: 0.7rem !important;
+            }
+
+            /* Hero */
+            .hero {
+                padding: 1.5rem 0 2rem !important;
+                min-height: auto !important;
+            }
+
+            .hero-content {
+                padding: 0 1rem !important;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem !important;
+                margin-bottom: 0.75rem !important;
+            }
+
+            .hero h2 {
+                font-size: 1.25rem !important;
+                margin-bottom: 1.5rem !important;
+            }
+
+            .hero-subtitle {
+                font-size: 0.875rem !important;
+                margin-bottom: 1.5rem !important;
+                line-height: 1.5 !important;
+            }
+
+            /* Stats */
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1rem !important;
+                max-width: 100% !important;
+                justify-items: center !important;
+            }
+
+            .stat-card {
+                padding: 0.75rem 0.5rem !important;
+                width: 100% !important;
+            }
+
+            /* Center the 5th stat (last item) */
+            .stats-grid .stat-card:last-child {
+                grid-column: 1 / -1 !important;
+                max-width: 50% !important;
+            }
+
+            .stat-number {
+                font-size: 1.5rem !important;
+                margin-bottom: 0.25rem !important;
+            }
+
+            .stat-label {
+                font-size: 0.65rem !important;
+                line-height: 1.3 !important;
+            }
+
+            /* Achievement Highlights */
+            .achievement-highlights {
+                grid-template-columns: 1fr !important;
+                gap: 0.5rem !important;
+                margin-bottom: 1.5rem !important;
+                max-width: 100% !important;
+            }
+
+            .highlight-item {
+                padding: 0.75rem !important;
+                gap: 0.5rem !important;
+            }
+
+            .highlight-icon {
+                width: 18px !important;
+                height: 18px !important;
+                font-size: 0.7rem !important;
+                flex-shrink: 0 !important;
+            }
+
+            .highlight-text {
+                font-size: 0.8rem !important;
+                line-height: 1.4 !important;
+            }
+
+            /* =========================== */
+            /* TECH SECTION - MOBILE       */
+            /* =========================== */
+            .tech-section {
+                padding: 2rem 0 !important;
+            }
+
+            .tech-content {
+                padding: 0 1rem !important;
+            }
+
+            .tech-title {
+                font-size: 1.25rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .tech-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+
+            .tech-card {
+                padding: 1rem !important;
+            }
+
+            .tech-logo {
+                height: 35px !important;
+                margin-bottom: 0.75rem !important;
+            }
+
+            .tech-logo img {
+                max-width: 120px !important;
+            }
+
+            .tech-description {
+                font-size: 0.8rem !important;
+                line-height: 1.5 !important;
+            }
+
+            /* =========================== */
+            /* DOMAIN SECTION - MOBILE     */
+            /* =========================== */
+            .domain-section {
+                padding: 2rem 0 !important;
+            }
+
+            .domain-content {
+                padding: 0 1rem !important;
+            }
+
+            .domain-title {
+                font-size: 1.25rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .domain-grid {
+                grid-template-columns: 1fr !important;
+                gap: 0.75rem !important;
+            }
+
+            .domain-card {
+                padding: 1rem !important;
+            }
+
+            .domain-header {
+                font-size: 0.85rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+
+            .domain-text {
+                font-size: 0.8rem !important;
+                line-height: 1.4 !important;
+            }
+
+            /* =========================== */
+            /* LEADERSHIP SECTION - MOBILE */
+            /* =========================== */
+            .leadership-section {
+                padding: 2rem 0 !important;
+            }
+
+            .leadership-content {
+                padding: 0 1rem !important;
+            }
+
+            .leadership-title {
+                font-size: 1.25rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .leadership-columns {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem !important;
+            }
+
+            .leadership-column {
+                padding-right: 0 !important;
+            }
+
+            .leadership-column::after {
+                display: none !important;
+            }
+
+            .column-header {
+                font-size: 1rem !important;
+                margin-bottom: 0.25rem !important;
+            }
+
+            .column-metric {
+                font-size: 0.7rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .column-item {
+                font-size: 0.85rem !important;
+                margin-bottom: 1rem !important;
+                line-height: 1.4 !important;
+            }
+
+            .publication-item {
+                margin-bottom: 1rem !important;
+            }
+
+            .publication-link {
+                font-size: 0.85rem !important;
+            }
+
+            .publication-detail {
+                font-size: 0.75rem !important;
+            }
+
+            .network-section {
+                margin-bottom: 1rem !important;
+            }
+
+            .network-label {
+                font-size: 0.75rem !important;
+            }
+
+            .network-text {
+                font-size: 0.85rem !important;
+                line-height: 1.4 !important;
+            }
+
+            /* =========================== */
+            /* PLAYBOOK/STRATEGY - MOBILE  */
+            /* =========================== */
+            .strategy-section {
+                padding: 2rem 0 !important;
+            }
+
+            .strategy-content {
+                padding: 0 1rem !important;
+            }
+
+            .strategy-header {
+                flex-direction: column !important;
+                gap: 0.5rem !important;
+                margin-bottom: 1.5rem !important;
+            }
+
+            .strategy-title {
+                font-size: 1.25rem !important;
+            }
+
+            .strategy-subtitle {
+                font-size: 0.75rem !important;
+            }
+
+            .section-number {
+                font-size: 2rem !important;
+                display: none;
+            }
+
+            .section-intro {
+                font-size: 0.85rem !important;
+                padding: 1rem !important;
+                margin-bottom: 1.5rem !important;
+                line-height: 1.5 !important;
+            }
+
+            /* =========================== */
+            /* FLYWHEEL - MOBILE           */
+            /* Convert to vertical stack   */
+            /* =========================== */
+            .flywheel-wrapper {
+                margin: 1.5rem 0 !important;
+            }
+
+            .flywheel-wrapper .block-title {
+                font-size: 1.1rem !important;
+                margin-bottom: 1.5rem !important;
+            }
 
             .flywheel {
-                grid-template-columns: 1fr;
+                position: relative !important;
+                width: 100% !important;
+                height: auto !important;
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 0.75rem !important;
+            }
+
+            .circle-connector {
+                display: none !important;
+            }
+
+            .flywheel-center-circle {
+                display: none !important;
+            }
+
+            .flywheel-step-box {
+                position: relative !important;
+                width: 100% !important;
+                height: auto !important;
+                min-height: auto !important;
+                transform: none !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                padding: 1rem !important;
+                border-left: 4px solid var(--snowflake-blue) !important;
+                border-radius: 8px !important;
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                justify-content: flex-start !important;
+                text-align: left !important;
+            }
+
+            .flywheel-step-box.flywheel-step-understand,
+            .flywheel-step-box.flywheel-step-create,
+            .flywheel-step-box.flywheel-step-enable,
+            .flywheel-step-box.flywheel-step-win {
+                position: relative !important;
+                transform: none !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+            }
+
+            .flywheel-step-title {
+                font-size: 1rem !important;
+                margin-bottom: 0.25rem !important;
+            }
+
+            .flywheel-step-desc {
+                font-size: 0.8rem !important;
+                line-height: 1.4 !important;
+            }
+
+            /* =========================== */
+            /* PHASE TABLES - MOBILE       */
+            /* =========================== */
+            .phase-detail-section {
+                margin: 1.5rem 0 !important;
+            }
+
+            .phase-detail-title {
+                font-size: 1.1rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            /* Make tables scrollable but keep header full width */
+            .rhythm-table {
+                display: block !important;
+                overflow-x: auto !important;
+                -webkit-overflow-scrolling: touch !important;
+                border-radius: 8px !important;
+                border: 2px solid var(--snowflake-blue) !important;
+            }
+
+            .rhythm-table thead {
+                display: table !important;
+                width: 100% !important;
+                table-layout: fixed !important;
+            }
+
+            .rhythm-table tbody {
+                display: table !important;
+                width: 100% !important;
+            }
+
+            .rhythm-table tr {
+                display: table-row !important;
+                width: 100% !important;
+            }
+
+            .rhythm-table th,
+            .rhythm-table td {
+                padding: 0.75rem 0.6rem !important;
+                font-size: 0.8rem !important;
+                line-height: 1.4 !important;
+                display: table-cell !important;
+            }
+
+            .rhythm-table th {
+                font-size: 0.75rem !important;
+                background: var(--snowflake-blue) !important;
+                color: white !important;
+            }
+
+            .rhythm-table td strong {
+                display: block !important;
+                margin-bottom: 0.25rem !important;
+                color: var(--text-primary) !important;
+            }
+
+            /* =========================== */
+            /* 30/90/180 TIMELINE - MOBILE */
+            /* =========================== */
+            .content-block {
+                margin-bottom: 1.5rem !important;
+            }
+
+            .block-title {
+                font-size: 1.1rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .timeline-container {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+
+            .timeline-phase {
+                padding: 1rem !important;
+                border-top-width: 3px !important;
+            }
+
+            .phase-label {
+                font-size: 0.7rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+
+            .phase-title {
+                font-size: 1.1rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+
+            .timeline-phase > div[style*="color: var(--text-secondary)"] {
+                font-size: 0.8rem !important;
+                line-height: 1.4 !important;
+            }
+
+            .timeline-phase > div[style*="background: var(--bg-light)"] {
+                padding: 0.75rem !important;
+                margin-top: 1rem !important;
+            }
+
+            .timeline-phase > div[style*="background: var(--bg-light)"] > div:first-child {
+                font-size: 0.65rem !important;
+            }
+
+            .timeline-phase > div[style*="background: var(--bg-light)"] > div:last-child {
+                font-size: 0.85rem !important;
+            }
+
+            .timeline-phase > div[style*="background: var(--bg-light)"] > div:last-child span {
+                font-size: 0.75rem !important;
+            }
+
+            /* Questions Section */
+            .content-block[style*="margin-top: 4rem"] {
+                margin-top: 2rem !important;
+            }
+
+            .content-block > div[style*="border: 2px solid"] {
+                padding: 1rem !important;
+            }
+
+            .content-block > div[style*="border: 2px solid"] > div[style*="display: grid"] {
+                gap: 1rem !important;
+            }
+
+            .content-block > div[style*="border: 2px solid"] > div[style*="display: grid"] > div {
+                gap: 0.5rem !important;
+            }
+
+            .content-block > div[style*="border: 2px solid"] > div[style*="display: grid"] > div > div:first-child {
+                font-size: 1rem !important;
+            }
+
+            .content-block > div[style*="border: 2px solid"] > div[style*="display: grid"] > div > div:last-child {
+                font-size: 0.85rem !important;
+                line-height: 1.4 !important;
             }
         }
 
@@ -1119,30 +1780,22 @@
             <div class="achievement-highlights">
                 <div class="highlight-item">
                     <div class="highlight-icon">✓</div>
-                    <div class="highlight-text">
-                        Doubled platform adoption in 24 months through stakeholder-driven prioritization across 2,500 use cases (manufacturing, sales, R&D, finance, purchasing).
-                    </div>
+                    <div class="highlight-text">Doubled platform adoption in 24 months (2,500 use cases across manufacturing, sales, R&D, finance)</div>
                 </div>
 
                 <div class="highlight-item">
                     <div class="highlight-icon">✓</div>
-                    <div class="highlight-text">
-                        Secured €10M annual funding by aligning BMW's data and AI strategy across eight IT VPs and presenting target picture to IT leadership board.
-                    </div>
+                    <div class="highlight-text">Secured €10M funding by aligning data strategy across 8 IT VPs</div>
                 </div>
 
                 <div class="highlight-item">
                     <div class="highlight-icon">✓</div>
-                    <div class="highlight-text">
-                        Built India data engineering hub from 0 to 65 developers, scaled platform org to 90+ engineers, expanded PM team from 7 to 15.
-                    </div>
+                    <div class="highlight-text">Built India hub 0→65 developers, scaled org to 90+ engineers</div>
                 </div>
 
                 <div class="highlight-item">
                     <div class="highlight-icon">✓</div>
-                    <div class="highlight-text">
-                        Manage 22PB across 180K tables. Reduced platform costs by €11M annually (30%) through access control, storage optimization, and Iceberg migration.
-                    </div>
+                    <div class="highlight-text">Reduced platform costs €11M/year (30%) through Iceberg migration and optimization</div>
                 </div>
             </div>
 
@@ -1183,9 +1836,7 @@
                         <img src="https://companieslogo.com/img/orig/SAP-be0cdcc9.png?t=1720244493" alt="SAP Logo">
                     </div>
                     <div class="tech-description">
-                        Controlling domain expert to technical implementation lead:<br><br>
-                        • <strong>Controlling Analytics:</strong> Cost center controlling, production analytics, AI forecasting<br>
-                        • <strong>S/4HANA Implementation:</strong> Led financial analytics and reporting for BMW's S/4HANA rollout
+                        R/3 → S/4HANA journey. Cost center controlling, production analytics, AI forecasting. Led financial analytics for BMW's S/4HANA rollout.
                     </div>
                 </div>
 
@@ -1194,9 +1845,7 @@
                         <img src="https://companieslogo.com/img/orig/AMZN_BIG-accd00da.png?t=1720244492" alt="AWS Logo">
                     </div>
                     <div class="tech-description">
-                        Progression from hands-on engineering to platform architecture:<br><br>
-                        • <strong>India Team Lead:</strong> Built analytics for APAC sales, financial services, supply chain, Catena-X<br>
-                        • <strong>Platform Head:</strong> 22PB on Parquet/Iceberg, 180K tables, 5K+ accounts
+                        Built 22PB lakehouse on Parquet/Iceberg. 180K tables, 5K+ accounts. Team lead in India, now Platform Head.
                     </div>
                 </div>
 
@@ -1205,9 +1854,7 @@
                         <img src="https://companieslogo.com/img/orig/SNOW-35164165.png?t=1751096598" alt="Snowflake Logo">
                     </div>
                     <div class="tech-description">
-                        From initial integration to strategic expansion:<br><br>
-                        • <strong>Initial:</strong> Added as data warehouse layer achieving lakehouse architecture. Migrated largest Oracle DW (aftersales). Featured in Summit 2025 CEO keynote.<br>
-                        • <strong>Expansion:</strong> Multi-cloud (Azure) for production/R&D. Cortex (GenAI), SAP BDC zero-copy integration. Shifting from AWS-native to Snowflake-centric (make to buy).
+                        Introduced Snowflake to BMW. Migrated largest Oracle DW. Multi-cloud (Azure), Cortex, SAP BDC integration. Summit 2025 keynote.
                     </div>
                 </div>
             </div>
@@ -1222,44 +1869,32 @@
             <div class="domain-grid">
                 <div class="domain-card">
                     <div class="domain-header">EU Data Act & GDPR</div>
-                    <div class="domain-text">
-                        Delivered compliance across 180K tables, 1.2M columns. Automated 1,000 customer requests/week at fraction of prior manual cost.
-                    </div>
+                    <div class="domain-text">180K tables, 1K requests/week automated</div>
                 </div>
 
                 <div class="domain-card">
-                    <div class="domain-header">Financial Services Regulation</div>
-                    <div class="domain-text">
-                        Enabled BMW Bank onboarding with hardened security. Created first Customer 360 combining sales + leasing under bank-grade governance.
-                    </div>
+                    <div class="domain-header">Financial Services</div>
+                    <div class="domain-text">BMW Bank onboarding, Customer 360</div>
                 </div>
 
                 <div class="domain-card">
                     <div class="domain-header">Telemetry & Digital Twins</div>
-                    <div class="domain-text">
-                        Telemetry ingested for digital twins (vehicle/battery state), warranty analytics, and customer-facing insights (BMW app battery optimization).
-                    </div>
+                    <div class="domain-text">Vehicle/battery state, warranty, BMW app</div>
                 </div>
 
                 <div class="domain-card">
-                    <div class="domain-header">Manufacturing Operations</div>
-                    <div class="domain-text">
-                        Production controller for 10 BMW plants (3 years). Built headcount, budget, and time-per-unit reporting. Worked directly with plant controllers across global operations.
-                    </div>
+                    <div class="domain-header">Manufacturing</div>
+                    <div class="domain-text">10 plants, 3 years production controlling</div>
                 </div>
 
                 <div class="domain-card">
-                    <div class="domain-header">Sales & Aftersales Analytics</div>
-                    <div class="domain-text">
-                        Introduced Snowflake for aftersales DW migration (Summit 2025 keynote). Delivered VIN-level margins from SAP. Built dealer campaign analytics for Japan.
-                    </div>
+                    <div class="domain-header">Sales & Aftersales</div>
+                    <div class="domain-text">Snowflake DW migration, VIN margins, dealer analytics</div>
                 </div>
 
                 <div class="domain-card">
-                    <div class="domain-header">Supply Chain & Catena-X</div>
-                    <div class="domain-text">
-                        Built supply chain analytics across multiple APAC markets. Catena-X collaboration capabilities for cross-enterprise sharing.
-                    </div>
+                    <div class="domain-header">Supply Chain</div>
+                    <div class="domain-text">APAC markets, Catena-X collaboration</div>
                 </div>
             </div>
         </div>
@@ -1268,85 +1903,45 @@
     <!-- Industry Leadership & Strategic Networks Section -->
     <section class="leadership-section">
         <div class="leadership-content">
-            <h2 class="leadership-title">Industry Leadership & Strategic Networks</h2>
+            <h2 class="leadership-title">Industry Leadership & Networks</h2>
             
-            <div class="leadership-columns">
-                <!-- Column 1: Public Speaking -->
+            <div class="leadership-columns" style="grid-template-columns: 1fr 1fr;">
+                <!-- Column 1: Speaking & Publications -->
                 <div class="leadership-column">
-                    <h3 class="column-header">Public Speaking & Events</h3>
+                    <h3 class="column-header">Speaking & Publications</h3>
                     
                     <div class="column-item">
-                        <strong>AWS re:Invent 2023</strong><br>
-                        Two sessions on lakehouse architecture and BI democratization (750+ participants)
-                        (<a href="https://www.youtube.com/watch?v=AJe5tpZXtL0" target="_blank">Session 1</a>, 
-                        <a href="https://www.youtube.com/watch?v=JsUAkNH2p80" target="_blank">Session 2</a>)
+                        <a href="https://www.youtube.com/watch?v=AJe5tpZXtL0" target="_blank">AWS re:Invent 2023</a> (750+ attendees)
                     </div>
-                    
                     <div class="column-item">
-                        <strong>CDO Conference Amsterdam 2025</strong><br>
-                        Speaker to 80+ senior data executives on platform governance
+                        CDO Conference Amsterdam 2025 (80+ executives)
                     </div>
-                    
                     <div class="column-item">
-                        <strong>Cloud Data Hub Days</strong><br>
-                        Host for internal BMW conference (1,300+ participants)
+                        <a href="https://aws.amazon.com/de/blogs/industries/bmw-group-unlocks-insights-from-petabytes-of-data-with-agentic-search-on-aws/" target="_blank">AWS Blog: Agentic Search on AWS</a>
+                    </div>
+                    <div class="column-item">
+                        <a href="https://aws.amazon.com/de/blogs/big-data/how-bmw-streamlined-data-access-using-aws-lake-formation-fine-grained-access-control/" target="_blank">AWS Blog: Lake Formation Access Control</a>
+                    </div>
+                    <div class="column-item">
+                        <a href="https://aws.amazon.com/de/blogs/business-intelligence/how-bmw-group-breaks-down-knowledge-silos-with-amazon-quick-sight/" target="_blank">AWS Blog: QuickSight Knowledge Silos</a>
+                    </div>
+                    <div class="column-item">
+                        <a href="https://www.snowflake.com/en/customers/all-customers/case-study/bmw-group/" target="_blank">Snowflake Case Study</a> (Summit 2025 keynote)
                     </div>
                 </div>
 
-                <!-- Column 2: Technical Publications -->
+                <!-- Column 2: Partner & Enterprise Networks -->
                 <div class="leadership-column">
-                    <h3 class="column-header">Technical Publications</h3>
-                    <div class="column-metric">AWS & Snowflake Blogs</div>
+                    <h3 class="column-header">Partner & Enterprise Networks</h3>
                     
-                    <div class="publication-item">
-                        <a href="https://aws.amazon.com/de/blogs/big-data/how-bmw-streamlined-data-access-using-aws-lake-formation-fine-grained-access-control/" target="_blank" class="publication-link">
-                            AWS Blog: Lake Formation Access Control
-                        </a>
-                        <div class="publication-detail">How BMW streamlined data access using fine-grained controls</div>
+                    <div class="column-item">
+                        <strong>AWS:</strong> Director/VP-level engagement (Lake Formation, S3, DataZone)
                     </div>
-                    
-                    <div class="publication-item">
-                        <a href="https://aws.amazon.com/de/blogs/business-intelligence/how-bmw-group-breaks-down-knowledge-silos-with-amazon-quick-sight/" target="_blank" class="publication-link">
-                            AWS Blog: QuickSight Knowledge Sharing
-                        </a>
-                        <div class="publication-detail">Breaking down knowledge silos at BMW Group</div>
+                    <div class="column-item">
+                        <strong>SIs:</strong> Accenture, Capgemini, Deloitte, NTT, LTIMindtree
                     </div>
-                    
-                    <div class="publication-item">
-                        <a href="https://www.snowflake.com/en/customers/all-customers/case-study/bmw-group/" target="_blank" class="publication-link">
-                            Snowflake Blog: BMW Case Study
-                        </a>
-                        <div class="publication-detail">Featured in Snowflake Summit 2025 CEO keynote</div>
-                    </div>
-                </div>
-
-                <!-- Column 3: Strategic Networks -->
-                <div class="leadership-column">
-                    <h3 class="column-header">Strategic Networks</h3>
-                    <div class="column-metric">Partners & Enterprise Contacts</div>
-                    
-                    <div class="network-section">
-                        <div class="network-label">Technology Partners</div>
-                        <div class="network-text">
-                            <strong>AWS:</strong> Regular engagement with Director/VP-level leadership influencing roadmap for Lake Formation, S3, DataZone.
-                        </div>
-                        <div class="network-text">
-                            <strong>Databricks:</strong> Competitive intelligence from POC evaluation.
-                        </div>
-                    </div>
-                    
-                    <div class="network-section">
-                        <div class="network-label">System Integrators</div>
-                        <div class="network-text">
-                            Accenture, Capgemini, Deloitte, NTT, LTIMindtree, TNG
-                        </div>
-                    </div>
-                    
-                    <div class="network-section">
-                        <div class="network-label">Enterprise Networks</div>
-                        <div class="network-text">
-                            Stellantis, Schwarz Gruppe, Siemens, Capital One
-                        </div>
+                    <div class="column-item">
+                        <strong>Enterprise:</strong> Stellantis, Schwarz Gruppe, Siemens, Capital One
                     </div>
                 </div>
             </div>
@@ -1408,49 +2003,22 @@
                 <table class="rhythm-table">
                     <thead>
                         <tr>
-                            <th style="width: 50%;">What I Do</th>
-                            <th style="width: 50%;">What You Get</th>
+                            <th style="width: 60%;">What I Do</th>
+                            <th style="width: 40%;">What You Get</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>
-                                <strong>1. Sales & Opportunity Alignment</strong>
-                                <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
-                                    <li>Join GTM leadership meetings to review customer status and pipeline</li>
-                                    <li>Prioritize: expand consumption (existing), engage top prospects, win pilots/PoCs</li>
-                                    <li>Define where FCTO adds value vs field handles autonomously</li>
-                                </ul>
-                            </td>
-                            <td>
-                                <strong>Prioritized account list with engagement criteria</strong>
-                            </td>
+                            <td><strong>Sales & Opportunity Alignment:</strong> Join GTM meetings, prioritize accounts, define FCTO engagement criteria</td>
+                            <td>Prioritized account list</td>
                         </tr>
                         <tr>
-                            <td>
-                                <strong>2. Customer Discovery & Product Feedback</strong>
-                                <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
-                                    <li>Shadow 15-20 calls across deal stages: stuck deals, early-stage, successful opportunities</li>
-                                    <li>Create diagnosis report: recurring blockers (technical, commercial, perception), success patterns, EMEA patterns (SAP/non-SAP, multi-cloud, Tier-1 sharing, regulatory)</li>
-                                    <li>Consolidate product gaps with business impact and competitive context: top features with € pipeline at risk</li>
-                                </ul>
-                            </td>
-                            <td>
-                                <strong>Field discovery playbook + prioritized product feedback with business case</strong>
-                            </td>
+                            <td><strong>Customer Discovery:</strong> Shadow 15-20 calls, create diagnosis report (blockers, success patterns, EMEA-specific)</td>
+                            <td>Field discovery playbook + product feedback</td>
                         </tr>
                         <tr>
-                            <td>
-                                <strong>3. FCTO Community & Play Validation</strong>
-                                <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
-                                    <li>Learn from global FCTO peers</li>
-                                    <li>Analyze win/loss (Databricks, AWS, Snowflake)</li>
-                                    <li>Validate 4 plays: Smart Factory, SDV/ADAS, Supply Chain, Connected Vehicle</li>
-                                </ul>
-                            </td>
-                            <td>
-                                <strong>Play strategy confirmed for EMEA</strong>
-                            </td>
+                            <td><strong>Play Validation:</strong> Learn from FCTO peers, analyze win/loss, validate plays (Smart Factory, Supply Chain, Connected Vehicle)</td>
+                            <td>Play strategy confirmed for EMEA</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1463,37 +2031,18 @@
                 <table class="rhythm-table">
                     <thead>
                         <tr>
-                            <th style="width: 50%;">What I Do</th>
-                            <th style="width: 50%;">What You Get</th>
+                            <th style="width: 60%;">What I Do</th>
+                            <th style="width: 40%;">What You Get</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>
-                                <strong>1. Build Solution Accelerators for Validated Plays</strong>
-                                <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
-                                    <li>Reference architecture (Snowflake features, data sources, architecture diagram)</li>
-                                    <li>Deployment guide (week-by-week: discovery → setup → demo → handoff)</li>
-                                    <li>Demo/template (sample dashboards, example queries, demo data)</li>
-                                    <li>SI delivery package (SOW template, pricing model, timeline)</li>
-                                    <li>Examples: Smart Factory (OEE analytics), Supply Chain (control tower), Connected Vehicle (telemetry analysis)</li>
-                                </ul>
-                            </td>
-                            <td>
-                                <strong>Field can propose pilot in first customer meeting with pre-built kit</strong>
-                            </td>
+                            <td><strong>Solution Accelerators:</strong> Reference architecture, deployment guide, demo/template, SI package (Smart Factory, Supply Chain, Connected Vehicle)</td>
+                            <td>Field proposes pilots with pre-built kit</td>
                         </tr>
                         <tr>
-                            <td>
-                                <strong>2. Create Enablement Assets</strong>
-                                <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
-                                    <li>Battlecards (e.g., "Why Snowflake vs SAP BW for non-SAP data integration")</li>
-                                    <li>Discovery question frameworks (e.g., "What's your Azure vs AWS split?")</li>
-                                </ul>
-                            </td>
-                            <td>
-                                <strong>SEs know how to qualify and compete</strong>
-                            </td>
+                            <td><strong>Enablement Assets:</strong> Battlecards (Snowflake vs SAP BW), discovery frameworks, competitive positioning</td>
+                            <td>SEs know how to qualify and compete</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1506,49 +2055,22 @@
                 <table class="rhythm-table">
                     <thead>
                         <tr>
-                            <th style="width: 50%;">What I Do</th>
-                            <th style="width: 50%;">What You Get</th>
+                            <th style="width: 60%;">What I Do</th>
+                            <th style="width: 40%;">What You Get</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>
-                                <strong>1. Train Field on Automotive Business</strong>
-                                <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
-                                    <li>Monthly sessions on automotive fundamentals: business model dynamics, industry transformation (SDV, electrification), competitive pressures</li>
-                                    <li>Deal clinics for stuck accounts (office hours format)</li>
-                                    <li>Hands-on training: how to demo Solution Accelerators, how to scope pilots</li>
-                                </ul>
-                            </td>
-                            <td>
-                                <strong>New SEs ramp in 2 weeks, can execute deals independently</strong>
-                            </td>
+                            <td><strong>Field Training:</strong> Monthly automotive sessions, deal clinics, hands-on Solution Accelerator demos</td>
+                            <td>New SEs ramp in 2 weeks</td>
                         </tr>
                         <tr>
-                            <td>
-                                <strong>2. Build Reference Story Bank</strong>
-                                <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
-                                    <li>Map existing use cases to automotive (e.g., NYSE processes 1.2 trillion order messages/day → automotive telemetry at comparable scale)</li>
-                                    <li>Curate customer stories (e.g., Nissan validates ProPILOT autonomous driving using billions of sensor data points on Snowflake)</li>
-                                    <li>EMEA-specific examples where relevant (Catena-X, GDPR, TISAX)</li>
-                                </ul>
-                            </td>
-                            <td>
-                                <strong>Proven patterns and customer references for every conversation</strong>
-                            </td>
+                            <td><strong>Reference Story Bank:</strong> Map Snowflake wins to automotive (Nissan, NYSE scale), EMEA context (Catena-X, GDPR)</td>
+                            <td>Proven patterns for every conversation</td>
                         </tr>
                         <tr>
-                            <td>
-                                <strong>3. Thought Leadership & Demand Generation</strong>
-                                <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
-                                    <li>Customer webinars (positioning Snowflake for automotive transformation)</li>
-                                    <li>Industry conferences (2-3 events: IAA Mobility, automotive data summits)</li>
-                                    <li>AWS/partner joint webinars (co-marketing with cloud/SI partners)</li>
-                                </ul>
-                            </td>
-                            <td>
-                                <strong>Inbound pipeline, industry credibility, field has customer references</strong>
-                            </td>
+                            <td><strong>Thought Leadership:</strong> Customer webinars, conferences (IAA Mobility), partner co-marketing</td>
+                            <td>Inbound pipeline, industry credibility</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1561,34 +2083,18 @@
                 <table class="rhythm-table">
                     <thead>
                         <tr>
-                            <th style="width: 50%;">What I Do</th>
-                            <th style="width: 50%;">What You Get</th>
+                            <th style="width: 60%;">What I Do</th>
+                            <th style="width: 40%;">What You Get</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>
-                                <strong>1. Scale Through Field & Partners</strong>
-                                <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
-                                    <li>Field executes autonomously (SEs close 80% without FCTO)</li>
-                                    <li>SIs deliver pilots at scale (e.g., Reply implements 5 Smart Factory pilots in parallel)</li>
-                                </ul>
-                            </td>
-                            <td>
-                                <strong>FCTO only needed for strategic escalations, delivery never a blocker</strong>
-                            </td>
+                            <td><strong>Scale Through Partners:</strong> Field executes autonomously, SIs deliver pilots at scale</td>
+                            <td>FCTO only for strategic escalations</td>
                         </tr>
                         <tr>
-                            <td>
-                                <strong>2. Continuous Improvement Loop</strong>
-                                <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
-                                    <li>Capture wins/losses, identify next blockers</li>
-                                    <li>Refine plays, update assets, activate new partners</li>
-                                </ul>
-                            </td>
-                            <td>
-                                <strong>Playbook improves with every cycle, loops back to UNDERSTAND phase</strong>
-                            </td>
+                            <td><strong>Continuous Improvement:</strong> Capture wins/losses, refine plays, activate new partners</td>
+                            <td>Playbook improves every cycle</td>
                         </tr>
                     </tbody>
                 </table>
@@ -1596,22 +2102,19 @@
 
             <!-- 30/90/180 Day Timeline Summary -->
             <div id="timeline" class="content-block">
-                <h3 class="block-title">30/90/180 Day Forcing Function Timeline</h3>
+                <h3 class="block-title">30/90/180 Day Plan</h3>
                 <div class="timeline-container">
                     <div class="timeline-phase" style="border-top: 4px solid var(--snowflake-blue);">
                         <div class="phase-label" style="color: var(--snowflake-blue);">DAYS 1-30</div>
                         <h4 class="phase-title">Listen & Align</h4>
-                        <ul class="phase-activities" style="list-style: none; padding-left: 0; margin-top: 1rem;">
-                            <li style="margin-bottom: 0.75rem;">→ Shadow 15-20 customer calls</li>
-                            <li style="margin-bottom: 0.75rem;">→ Interview GTM leadership</li>
-                            <li style="margin-bottom: 0.75rem;">→ Start deal clinics & field training</li>
-                        </ul>
+                        <div style="color: var(--text-secondary); margin-top: 1rem; line-height: 1.7;">
+                            Shadow 15-20 customer calls. Interview GTM leadership. Start deal clinics.
+                        </div>
                         <div style="background: var(--bg-light); padding: 1rem; margin-top: 1.5rem; border-radius: 4px;">
                             <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); font-weight: 700; margin-bottom: 0.5rem;">OUTPUT</div>
                             <div>
                                 <strong>Diagnosis started. Deal clinics running.</strong><br>
-                                <span style="color: var(--text-secondary);">• Prioritized account list with engagement criteria<br>
-                                • Recurring blockers and success patterns identified</span>
+                                <span style="color: var(--text-secondary);">Prioritized accounts, blockers identified</span>
                             </div>
                         </div>
                     </div>
@@ -1619,20 +2122,14 @@
                     <div class="timeline-phase" style="border-top: 4px solid #10b981;">
                         <div class="phase-label" style="color: #10b981;">DAYS 30-90</div>
                         <h4 class="phase-title">Build & Deploy</h4>
-                        <ul class="phase-activities" style="list-style: none; padding-left: 0; margin-top: 1rem;">
-                            <li style="margin-bottom: 0.75rem;">→ Diagnosis report completed, validated plays identified</li>
-                            <li style="margin-bottom: 0.75rem;">→ <strong>First Solution Accelerator built</strong> (Smart Factory): reference architecture, deployment guide, demo/template, SI package</li>
-                            <li style="margin-bottom: 0.75rem;">→ <strong>Enablement assets created:</strong> battlecards, discovery questions</li>
-                            <li style="margin-bottom: 0.75rem;">→ <strong>Field training ongoing:</strong> monthly automotive sessions, hands-on demos</li>
-                            <li style="margin-bottom: 0.75rem;">→ <strong>First webinar/event:</strong> customer webinar or conference speaking</li>
-                        </ul>
+                        <div style="color: var(--text-secondary); margin-top: 1rem; line-height: 1.7;">
+                            First Solution Accelerator (Smart Factory). Battlecards and discovery questions. Field training. First webinar/event.
+                        </div>
                         <div style="background: var(--bg-light); padding: 1rem; margin-top: 1.5rem; border-radius: 4px;">
                             <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); font-weight: 700; margin-bottom: 0.5rem;">OUTPUT</div>
                             <div>
-                                <strong>First Solution Accelerator live. Field proposing pilots with pre-built kit.</strong><br>
-                                <span style="color: var(--text-secondary);">• SEs know how to qualify and compete<br>
-                                • Stuck customers unblocked<br>
-                                • First thought leadership activity completed</span>
+                                <strong>First Solution Accelerator live. Field proposing pilots.</strong><br>
+                                <span style="color: var(--text-secondary);">SEs can qualify and compete independently</span>
                             </div>
                         </div>
                     </div>
@@ -1640,18 +2137,14 @@
                     <div class="timeline-phase" style="border-top: 4px solid #f97316;">
                         <div class="phase-label" style="color: #f97316;">DAYS 90-180</div>
                         <h4 class="phase-title">Scale & Amplify</h4>
-                        <ul class="phase-activities" style="list-style: none; padding-left: 0; margin-top: 1rem;">
-                            <li style="margin-bottom: 0.75rem;">→ <strong>Remaining Solution Accelerators completed</strong> (Supply Chain, Connected Vehicle)</li>
-                            <li style="margin-bottom: 0.75rem;">→ <strong>Reference story bank built:</strong> NYSE/Nissan examples, EMEA regulatory context</li>
-                            <li style="margin-bottom: 0.75rem;">→ <strong>Thought leadership scaled:</strong> 2-3 conferences (IAA Mobility), AWS/partner webinars</li>
-                            <li style="margin-bottom: 0.75rem;">→ Field executing independently with proven patterns</li>
-                        </ul>
+                        <div style="color: var(--text-secondary); margin-top: 1rem; line-height: 1.7;">
+                            Remaining Solution Accelerators (Supply Chain, Connected Vehicle). Reference story bank. 2-3 conferences.
+                        </div>
                         <div style="background: var(--bg-light); padding: 1rem; margin-top: 1.5rem; border-radius: 4px;">
                             <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); font-weight: 700; margin-bottom: 0.5rem;">OUTPUT</div>
                             <div>
                                 <strong>Field executing independently. Industry credibility established.</strong><br>
-                                <span style="color: var(--text-secondary);">• New SEs ramp in 2 weeks<br>
-                                • Multiple thought leadership activities generating inbound pipeline</span>
+                                <span style="color: var(--text-secondary);">New SEs ramp in 2 weeks</span>
                             </div>
                         </div>
                     </div>
