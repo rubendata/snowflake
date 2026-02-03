@@ -1755,6 +1755,306 @@
         .phase-card-content li {
             margin-bottom: 0.5rem;
         }
+
+        /* === WHERE WE WIN SECTION === */
+        .dont-compete-box {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--text-muted);
+            margin-bottom: 3rem;
+        }
+
+        .dont-compete-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--snowflake-dark);
+            margin-bottom: 1.25rem;
+        }
+
+        .dont-compete-items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .dont-compete-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .dont-compete-item strong {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .dont-compete-item span {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        .plays-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .play-card {
+            background: var(--bg-white);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            position: relative;
+            transition: transform 0.2s, border-color 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .play-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--snowflake-blue);
+        }
+
+        .play-number {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--snowflake-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .play-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--snowflake-dark);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .play-why {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .play-entry {
+            background: var(--bg-light);
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: auto;
+        }
+
+        .play-entry-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+        }
+
+        .play-entry-text {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .revenue-box {
+            background: var(--snowflake-dark);
+            color: white;
+            border-radius: 8px;
+            padding: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .revenue-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: white;
+        }
+
+        .revenue-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .revenue-col {
+            padding: 1.5rem 2rem;
+        }
+
+        .revenue-col-today {
+            border-right: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .revenue-col-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .revenue-stat {
+            margin-bottom: 1.25rem;
+        }
+
+        .revenue-stat:last-child {
+            margin-bottom: 0;
+        }
+
+        .revenue-stat .number {
+            font-family: 'IBM Plex Mono', monospace;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--snowflake-blue);
+            display: block;
+            line-height: 1.2;
+        }
+
+        .revenue-stat .number.white {
+            color: white;
+        }
+
+        .fy-update {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: rgba(41, 181, 232, 0.6);
+        }
+
+        .revenue-stat .label {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.4;
+            margin-top: 0.15rem;
+        }
+
+        .estimate-tag {
+            display: inline-block;
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: rgba(41, 181, 232, 0.2);
+            color: var(--snowflake-blue);
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+            font-weight: 700;
+            vertical-align: middle;
+            margin-left: 0.2rem;
+        }
+
+        .fn-ref {
+            font-size: 0.65rem;
+            color: var(--snowflake-blue);
+            vertical-align: super;
+            margin-left: 0.1rem;
+            cursor: default;
+        }
+
+        .revenue-narrative {
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 1.25rem 2rem 0;
+            margin-top: 0.5rem;
+        }
+
+        .revenue-narrative p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .revenue-narrative strong {
+            color: white;
+        }
+
+        .assumptions-box {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 1.25rem;
+            padding: 1rem 2rem 0;
+        }
+
+        .assumptions-title {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.25);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .assumption-item {
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.3);
+            line-height: 1.6;
+            margin-bottom: 0.3rem;
+        }
+
+        .assumption-item .fn-num {
+            color: rgba(41, 181, 232, 0.5);
+            font-weight: 700;
+            margin-right: 0.2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .dont-compete-items {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .plays-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Revenue columns stay side-by-side on tablet */
+        }
+
+        @media (max-width: 480px) {
+            .revenue-box {
+                padding: 1.5rem;
+            }
+
+            .revenue-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .revenue-col-today {
+                border-right: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+                padding-bottom: 1.5rem;
+            }
+
+            .revenue-col {
+                padding: 1rem;
+                text-align: center;
+            }
+
+            .revenue-stat .number {
+                font-size: 1.5rem;
+            }
+
+            .revenue-stat .label {
+                font-size: 0.75rem;
+            }
+
+            .revenue-narrative,
+            .assumptions-box {
+                padding-left: 1rem;
+                padding-right: 1rem;
+                text-align: center;
+            }
+
+            .assumptions-box {
+                text-align: left;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1778,9 +2078,9 @@
     <!-- Section 01: INTRODUCTION AND EXPERIENCE -->
     <section id="introduction" class="hero">
         <div class="hero-content">
-            <h2 style="color: white; font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem;">Introduction</h2>
+            <h1 style="color: white; font-size: 2.5rem; font-weight: 700; margin-bottom: 3rem;">Introduction</h1>
             
-            <h1>Ruben Simon</h1>
+            <h2>Ruben Simon</h2>
             
             <p class="hero-subtitle">
                 15 years in automotive: 2 years controlling at Tier-1 supplier, 13 years at BMW (6 controlling, 7 building the data and AI platform).<br>
@@ -1960,17 +2260,73 @@
     </section>
 
     <!-- Section 02: PLAYBOOK -->
-    <section id="playbook" class="strategy-section">
+    <section id="playbook" class="strategy-section" style="padding-bottom: 0;">
         <div class="strategy-content">
             <div class="strategy-header">
                 <div class="section-titles">
-                    <h2 class="strategy-title">Playbook</h2>
+                    <h1 class="strategy-title">Playbook</h1>
                     <span class="strategy-subtitle">How I'll Drive Automotive Growth in EMEA</span>
                 </div>
             </div>
 
-            <p class="section-intro">A repeatable process to accelerate Snowflake's automotive growth in EMEA. The Flywheel delivers outcomes through collaboration with Sales, SEs, and SI partners. What works gets packaged and executed by the field independently.</p>
 
+            <!-- REVENUE OPPORTUNITY — full-width like hero -->
+        </div>
+    </section>
+
+    <section style="background: #043464; padding: 3.5rem 0;">
+        <div style="max-width: 1400px; margin: 0 auto; padding: 0 3rem;">
+                <div class="revenue-box" style="background: none; padding: 0; border-radius: 0;">
+                    <h2 class="revenue-title">What It's Worth: The Revenue Opportunity</h2>
+
+                    <div class="revenue-columns">
+                        <div class="revenue-col revenue-col-today">
+                            <div class="revenue-col-label">FY2025 (published)</div>
+
+                            <div class="revenue-stat">
+                                <span class="number">$3.5B <span class="fy-update">(FY26: $4.4B)</span></span>
+                                <span class="label">Snowflake product revenue (29% YoY)</span>
+                            </div>
+
+                            <div class="revenue-stat">
+                                <span class="number">$575M <span class="fy-update">(FY26: ~$723M est.)</span></span>
+                                <span class="label">EMEA revenue (16% of global, 33% YoY)</span>
+                            </div>
+
+                            <div class="revenue-stat">
+                                <span class="number">$50-80M</span>
+                                <span class="label">EMEA automotive ARR <span class="estimate-tag">est.</span><span class="fn-ref">¹</span></span>
+                            </div>
+                        </div>
+
+                        <div class="revenue-col">
+                            <div class="revenue-col-label">FY2029 Path</div>
+
+                            <div class="revenue-stat">
+                                <span class="number white">$10B</span>
+                                <span class="label">Snowflake product revenue target (2021 Investor Day)</span>
+                            </div>
+
+                            <div class="revenue-stat">
+                                <span class="number white">~$3.3B</span>
+                                <span class="label">EMEA at 33% share (Dan Waters, GVP EMEA)</span>
+                            </div>
+
+                            <div class="revenue-stat">
+                                <span class="number white">$200-400M</span>
+                                <span class="label">EMEA automotive potential<span class="fn-ref">²</span><br>~60-70% CAGR required over 3 years</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+        </div>
+    </section>
+
+    <section id="playbook-continued" class="strategy-section">
+        <div class="strategy-content">
+
+            <p class="section-intro">A repeatable process to accelerate Snowflake's automotive growth in EMEA. The Flywheel delivers outcomes through collaboration with Sales, SEs, and SI partners. What works gets packaged and executed by the field independently.</p>
 
             <div class="flywheel-wrapper">
                 <h3 class="block-title" style="text-align: center; margin-bottom: 3rem;">The Field CTO Flywheel</h3>
@@ -2028,7 +2384,7 @@
                             <td>Field discovery playbook + product feedback</td>
                         </tr>
                         <tr>
-                            <td><strong>Play Validation:</strong> Learn from FCTO peers, analyze win/loss, validate plays (Smart Factory, Supply Chain, Connected Vehicle)</td>
+                            <td><strong>Play Validation:</strong> Learn from FCTO peers, analyze win/loss, validate plays. Focus on where we create customer ROI within 6 months</td>
                             <td>Play strategy confirmed for EMEA</td>
                         </tr>
                     </tbody>
@@ -2054,6 +2410,10 @@
                         <tr>
                             <td><strong>Enablement Assets:</strong> Battlecards (Snowflake vs SAP BW), discovery frameworks, competitive positioning</td>
                             <td>SEs know how to qualify and compete</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Partner & ISV Mapping:</strong> Match SIs and niche ISVs to each play, covering gaps where Snowflake doesn't connect natively. Source through Marketplace, customer referrals, and industry events</td>
+                            <td>Every play ships with a named delivery path</td>
                         </tr>
                     </tbody>
                 </table>
@@ -2109,6 +2469,68 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+            <!-- WHERE WE WIN IN AUTOMOTIVE -->
+            <div class="content-block" style="margin-top: 4rem;">
+                <h3 class="block-title">Where We Win in Automotive</h3>
+
+                <div class="dont-compete-box">
+                    <div class="dont-compete-title">Where We Don't Compete</div>
+                    <div class="dont-compete-items">
+                        <div class="dont-compete-item">
+                            <strong>SAP Transactional Systems</strong>
+                            <span>ERP, supply chain, financials, Catena-X. We integrate their data, not replace it.</span>
+                        </div>
+                        <div class="dont-compete-item">
+                            <strong>Real-Time Operational Systems</strong>
+                            <span>MES, PLM, ECUs, test rigs, charging. We analyze their data, not run their systems. The right SI or ISV bridges this gap.</span>
+                        </div>
+                        <div class="dont-compete-item">
+                            <strong>BI / Visualization Layer</strong>
+                            <span>Tableau, Power BI, QlikSense, QuickSight, SAP SAC. We are the data layer underneath. Streamlit serves apps, not dashboards.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plays-grid">
+                    <div class="play-card">
+                        <div class="play-number">Play 1</div>
+                        <div class="play-name">SAP + Non-SAP Data Convergence</div>
+                        <div class="play-why">
+                            OEMs run SAP for ERP and supply chain but also have massive non-SAP data: telemetry, OT signals, supplier feeds. SAP Datasphere breaks at non-SAP scale. Snowflake converges both into one governed platform.
+                        </div>
+                        <div class="play-entry">
+                            <div class="play-entry-label">Entry Point</div>
+                            <div class="play-entry-text">CDO or VP Data looking to unify cross-domain analytics without heavy engineering investment</div>
+                        </div>
+                    </div>
+
+                    <div class="play-card">
+                        <div class="play-number">Play 2</div>
+                        <div class="play-name">Governed Data Sharing</div>
+                        <div class="play-why">
+                            Cross-OEM and cross-tier sharing is complex and high-potential. Regulatory drivers: EU Data Act, CSRD, battery passports, customs. Snowflake shares data natively without copying, with row-level security built in. Reality: smaller OEMs need clear ROI before committing.
+                        </div>
+                        <div class="play-entry">
+                            <div class="play-entry-label">Entry Point</div>
+                            <div class="play-entry-text">Chief Data Officer or Legal/Compliance under regulatory deadlines, or Supply Chain VP needing cross-tier visibility</div>
+                        </div>
+                    </div>
+
+                    <div class="play-card">
+                        <div class="play-number">Play 3</div>
+                        <div class="play-name">Platform Consolidation and TCO Reduction</div>
+                        <div class="play-why">
+                            Real OEM pain: missing skills, high TCO, slow time-to-data, vendor lock-in. Snowflake reduces overhead, offers multi-cloud interoperability, and compresses time-to-pilot. Iceberg avoids proprietary lock-in.
+                        </div>
+                        <div class="play-entry">
+                            <div class="play-entry-label">Entry Point</div>
+                            <div class="play-entry-text">CIO or VP Infrastructure under cost pressure, typically during cloud contract renewals or platform consolidation cycles</div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <!-- 30/90/180 Day Timeline Summary -->
@@ -2182,7 +2604,29 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
+
+    <!-- Why Me / Why This Move -->
+    <section style="background: linear-gradient(135deg, #043464 0%, #1E3A5F 100%); color: white; padding: 4rem 0;">
+        <div style="max-width: 1400px; margin: 0 auto; padding: 0 3rem;">
+            <h2 style="font-size: 2.5rem; font-weight: 800; color: white; margin-bottom: 2.5rem; text-align: center;">Why Me. Why Now.</h2>
+
+            <div style="max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem;">
+                <div style="font-size: 1.05rem; color: rgba(255,255,255,0.9); padding: 0.75rem 1.25rem; border-left: 3px solid #29B5E8; background: rgba(255,255,255,0.05); border-radius: 4px;">15 years automotive. Built the platform. Been the customer.</div>
+                <div style="font-size: 1.05rem; color: rgba(255,255,255,0.9); padding: 0.75rem 1.25rem; border-left: 3px solid #29B5E8; background: rgba(255,255,255,0.05); border-radius: 4px;">I obsess over the real problem, not the quick fix.</div>
+                <div style="font-size: 1.05rem; color: rgba(255,255,255,0.9); padding: 0.75rem 1.25rem; border-left: 3px solid #29B5E8; background: rgba(255,255,255,0.05); border-radius: 4px;">Thought leader with stage time and an active network.</div>
+                <div style="font-size: 1.05rem; color: rgba(255,255,255,0.9); padding: 0.75rem 1.25rem; border-left: 3px solid #29B5E8; background: rgba(255,255,255,0.05); border-radius: 4px;">Shape an industry. Grow with every customer. Impact first.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assumptions footnotes - standalone -->
+    <footer style="max-width: 1400px; margin: 0 auto; padding: 2rem 3rem 3rem; border-top: 1px solid #e0e0e0;">
+        <div style="font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; color: #999; font-weight: 700; margin-bottom: 0.5rem;">Assumptions</div>
+        <div style="font-size: 0.65rem; color: #999; line-height: 1.6; margin-bottom: 0.3rem;"><span style="color: #29B5E8; font-weight: 700; margin-right: 0.2rem;">¹</span>EMEA North automotive/mfg portfolio alone: $30M+ ARR (one Regional Sales Director, Nordics/Benelux/CH). Single German OEM already at ~$2M ARR. Extrapolation across DACH, UK, France, Southern Europe. 80% of major OEMs on platform (Snowflake claim); public references: Nissan, CarMax, Cox — zero public EMEA OEM references yet.</div>
+        <div style="font-size: 0.65rem; color: #999; line-height: 1.6; margin-bottom: 0.3rem;"><span style="color: #29B5E8; font-weight: 700; margin-right: 0.2rem;">²</span>$10B × 33% EMEA = ~$3.3B. Automotive must over-index vs. EMEA average to justify dedicated FCTO. Supported by: 416% manufacturing growth since Apr 2023, 125% NRR compounding, EMEA automotive data analytics TAM ~$3.5B est. (~30% of $11.5B global; Europe ~25% of global auto production, regulatory burden pushes spend above production share).</div>
+    </footer>
 </body>
 </html>
